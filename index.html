@@ -15,24 +15,24 @@
             <button class="operator" value="(">(</button>
             <button class="operator" value=")">)</button>
             <button onclick="clearInput()" class="operator" value="C">C</button>
-            <button class="operator" id="CE" value="CE">CE</button>
+            <button onclick="clearAllInput()"class="operator" id="CE" value="CE">CE</button>
             <button onclick="append(7)"value="7">7</button>
             <button onclick="append(8)"value="8">8</button>
             <button onclick="append(9)"value="9">9</button>
-            <button onclick="append(add)"class="operator" value="+">+</button>
+            <button onclick="add()"class="operator" value="+">+</button>
             <button onclick="append(4)"value="4">4</button>
             <button onclick="append(5)"value="5">5</button>
             <button onclick="append(6)"value="6">6</button>
-            <button onclick="append(substract)"class="operator" value="-">-</button>
+            <button onclick="substract()"class="operator" value="-">-</button>
             <button onclick="append(1)" value="1">1</button>
             <button onclick="append(2)" value="2">2</button>
             <button onclick="append(3)" value="3">3</button>
-            <button onclick="append(multiply)"class="operator" value="*">*</button>
-            <button onclick="append(calculate)"class="operator" id="equals" value="=">=</button>
+            <button onclick="multiply()"class="operator" value="*">*</button>
+            <button onclick="calculate()"class="operator" id="equals" value="=">=</button>
             <button value="0">0</button>
            
-            <button onclick="append(dot)"value=".">.</button>
-            <button class="operator" value="/">/</button>
+            <button onclick="append('.')"value=".">.</button>
+            <button onclick="divide()"class="operator" value="/">/</button>
           
         </div>
     </div>
@@ -46,18 +46,11 @@
 
             }
 
-            function clearInput() {
-                currentInput = '';
-                currentOperator = '';
-                document.getElementById('result').value = '';
-                
-            }
-
-            function dot() {
-                currentOperator = '.';
-                currentInput += currentOperator;
-                document.getElementById('result').value = currentInput;
-            }
+            // function append() {
+            //     currentOperator = '.';
+            //     currentInput += currentOperator;
+            //     document.getElementById('result').value = currentInput;
+            // }
 
 
             function add() {
@@ -88,6 +81,22 @@
                 currentInput = result.toString();
                 currentOperator = '';
             }
+
+            function clearInput() {
+              const result = document.getElementById('result');
+              const currentInput = result.value;
+              if (currentInput.length > 0) {
+                const newValue = currentInput.slice(0, -1);
+                result.value = newValue;
+              }
+            }
+
+            function clearAllInput() {
+                currentInput = '';
+                currentOperator = '';
+                document.getElementById('result').value = '';                
+            }
+
         </script>
 </body>
 </html>

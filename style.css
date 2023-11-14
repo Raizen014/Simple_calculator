@@ -15,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 100px;
+  top: 150px;
   
 }
 
@@ -24,7 +24,7 @@ body {
   border: 10px groove rgb(116, 104, 104);
   padding: 20px;
   font-family: "Rancho";
-  font-size: 3em;
+  font-size: 2.8em;
 }
 
 
